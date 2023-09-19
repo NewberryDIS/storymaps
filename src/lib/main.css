@@ -1,0 +1,161 @@
+html,
+body {
+  /* height: 100%; */
+  /* width: 100%; */
+  box-sizing: border-box;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+body {
+  /* background: var(--bg-2); */
+  background-image: url("/lbl-map-bg.png");
+  background-size: cover;
+  background-position: center;
+  /* background-attachment: fixed; */
+  overflow-x: hidden;
+}
+body * {
+  box-sizing: border-box;
+}
+html {
+  --nl-box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1);
+  --rb4r-green: 237, 231, 206;
+  --flame: 241, 97, 81;
+  --park-green: 32, 84, 62;
+  --tile: 146, 88, 64;
+  --sapphire: 64, 81, 163;
+  --lake: 126, 196, 226;
+  --mulberry: 173, 43, 90;
+  --lavender: 205, 184, 209;
+  --midnight: 17, 26, 42;
+  --granite: 234, 235, 231;
+  --sand: 234, 220, 201;
+  --angle: 120deg;
+  --dist: 70vw;
+}
+
+/*  dm on */
+:root {
+  /* --splash-color: var(--sapphire); */
+  /* --bg-color-1: var(--midnight); */
+  /* --bg-color-2: var(--mulberry); */
+  /* --fg-color-2: var(--lavender); */
+  /* --fg-color-1: var(--granite); */
+}
+:root {
+  --splash-color: var(--lake);
+  --fg-color-1: var(--midnight);
+  --fg-color-2: var(--sapphire);
+  --bg-color-2: var(--rb4r-green);
+  --bg-color-1: var(--flame);
+  --bg-1: linear-gradient(
+    var(--angle),
+    rgb(var(--bg-color-1)) 0vw,
+    var(--dist),
+    rgb(var(--bg-color-2)) var(--dist) 100vw
+  );
+  --bg-2: linear-gradient(
+    var(--angle),
+    rgb(var(--bg-color-2)) 0vw,
+    var(--dist),
+    rgb(var(--bg-color-1)) var(--dist) 100vw
+  );
+  color: rgb(var(--fg-color-1));
+}
+/* :root::after { */
+/* 	content: ''; */
+/* 	position: fixed; */
+/* 	top: -50%; */
+/* 	left: -50%; */
+/* 	right: -50%; */
+/* 	bottom: -50%; */
+/* 	background: var(--bg-1); */
+/* 	/* transform: rotate(-30deg); */
+/* } */
+@font-face {
+  font-family: "flecha";
+  src: url("/fonts/FlechaM-Regular.woff");
+}
+@font-face {
+  font-family: "styrene";
+  src: url("/fonts/StyreneB-Regular-Web.woff");
+}
+@font-face {
+  font-family: "styrene-bold";
+  src: url("/fonts/StyreneB-Bold-Web.woff");
+}
+@font-face {
+  font-family: "signifier";
+  src: url("/fonts/signifier-regular.woff2");
+}
+@font-face {
+  font-family: "signifier-bold";
+  src: url("/fonts/signifier-bold.woff2");
+}
+
+h1,
+h2 {
+  font-family: "flecha";
+  color: rgb(var(--brand));
+}
+h3,
+h4,
+h5,
+h6,
+dt {
+  font-family: "styrene";
+  color: rgb(var(--brand));
+}
+
+body,
+html {
+  font-family: "signifier";
+}
+
+b {
+  font-family: "styrene-bold";
+}
+
+.llines {
+  color: inherit !important;
+  font-weight: 700;
+  line-height: 1rem;
+  text-decoration: none;
+  background: linear-gradient(
+      to right,
+      rgba(var(--fg-color-1), 0.3),
+      rgba(var(--fg-color-1), 0.3)
+    ),
+    linear-gradient(
+      to right,
+      rgba(var(--fg-color-1), 1),
+      rgba(var(--fg-color-1), 1)
+    );
+  background-size: 100% 0.1rem, 0 0.1rem;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 300ms;
+}
+
+.llines:hover,
+.llines:focus {
+  background-size: 0 0.1rem, 100% 0.1rem;
+}
+/* ELEVATIONS */
+header {
+  z-index: 30;
+}
+.content {
+  z-index: 1;
+}
+.tiles {
+  z-index: 10;
+}
+.card {
+  z-index: 20;
+}
+
+.circle-wrap {
+  z-index: 2;
+}
